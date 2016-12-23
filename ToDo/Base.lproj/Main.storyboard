@@ -169,5 +169,90 @@
             </objects>
             <point key="canvasLocation" x="1036" y="151.57421289355324"/>
         </scene>
+        <!--Input View Controller-->
+        <scene sceneID="Xql-dZ-XBE">
+            <objects>
+                <viewController storyboardIdentifier="InputViewController" id="Iek-aW-G2R" customClass="InputViewController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T8n-v3-yQP"/>
+                        <viewControllerLayoutGuide type="bottom" id="IYP-ha-9ax"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5I2-6G-fp8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9EA-L6-9t0">
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="15Y-g1-FxN">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TXb-R9-LPy">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xwl-dO-rcS">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mib-Te-cyl">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qDG-1L-f23">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="T5M-bv-p8w"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2t2-Hj-gGP">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dre-rt-fnU">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="eeb-yc-D4U"/>
+                                                </constraints>
+                                                <state key="normal" title="Save"/>
+                                                <connections>
+                                                    <action selector="save" destination="Iek-aW-G2R" eventType="touchUpInside" id="Q7c-cW-Gor"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="195-lo-i3h">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="INq-9S-E7c"/>
+                                                </constraints>
+                                                <state key="normal" title="Cancel"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9EA-L6-9t0" secondAttribute="trailing" id="Ymv-BW-gqt"/>
+                            <constraint firstItem="9EA-L6-9t0" firstAttribute="leading" secondItem="5I2-6G-fp8" secondAttribute="leadingMargin" id="heJ-oF-7lU"/>
+                            <constraint firstItem="9EA-L6-9t0" firstAttribute="top" secondItem="T8n-v3-yQP" secondAttribute="bottom" id="pEp-G2-8TG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressTextField" destination="Mib-Te-cyl" id="FO5-mG-mwA"/>
+                        <outlet property="cancelButton" destination="195-lo-i3h" id="dl0-tv-pA4"/>
+                        <outlet property="dateTextField" destination="TXb-R9-LPy" id="qBK-hs-KBv"/>
+                        <outlet property="descriptionTextField" destination="qDG-1L-f23" id="91T-e1-6lp"/>
+                        <outlet property="locationTextField" destination="Xwl-dO-rcS" id="qJr-6U-vKU"/>
+                        <outlet property="saveButton" destination="Dre-rt-fnU" id="Zl6-7a-BRI"/>
+                        <outlet property="titleTextField" destination="15Y-g1-FxN" id="UAY-eb-CWv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MIr-aI-dik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1729" y="152"/>
+        </scene>
     </scenes>
 </document>

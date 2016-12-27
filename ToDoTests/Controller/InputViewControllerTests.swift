@@ -121,6 +121,36 @@ class InputViewControllerTests: XCTestCase {
         
         XCTAssertTrue(actions.contains("save")) 
     }
+    
+    func test_Geocoder_FetchesCoordinates() {
+        
+        let geocoderAnswered = expectation(description: "Geocoder")
+        
+        CLGeocoder().geocodeAddressString("Infinite Loop 1, Cupertino") { (placemarks, error) in
+            
+            
+            let coordinate = placemarks?.first?.location?.coordinate
+            
+            guard let latitude = coordinate?.latitude else {
+                XCTFail()
+                return
+            }
+
+            guard let longitude = coordinate?.longitude else {
+                XCTFail()
+                return
+            }
+            
+            XCTAssertEqualWithAccuracy(latitude, 37.3316,
+                                       accuracy: 0.0001)
+            XCTAssertEqualWithAccuracy(longitude, -122.030127,
+                                       accuracy: 0.0001)
+
+            geocoderAnswered.fulfill()
+        }
+        
+        waitForExpectations(timeout: 3, handler: nil)
+    }
 }
 
 extension InputViewControllerTests {

@@ -27,6 +27,9 @@
 		02F544451E0D96E200268922 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F544441E0D96E200268922 /* DetailViewController.swift */; };
 		02F544471E0DA21C00268922 /* InputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F544461E0DA21C00268922 /* InputViewControllerTests.swift */; };
 		02F544491E0DA26E00268922 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F544481E0DA26E00268922 /* InputViewController.swift */; };
+		02F544601E1090C400268922 /* APIClientsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5445F1E1090C400268922 /* APIClientsTests.swift */; };
+		02F544621E10912300268922 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F544611E10912300268922 /* APIClient.swift */; };
+		02F544641E109F3200268922 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F544631E109F3200268922 /* Token.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		02F544441E0D96E200268922 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Controller/DetailViewController.swift; sourceTree = "<group>"; };
 		02F544461E0DA21C00268922 /* InputViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputViewControllerTests.swift; path = Controller/InputViewControllerTests.swift; sourceTree = "<group>"; };
 		02F544481E0DA26E00268922 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputViewController.swift; path = Controller/InputViewController.swift; sourceTree = "<group>"; };
+		02F5445F1E1090C400268922 /* APIClientsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientsTests.swift; sourceTree = "<group>"; };
+		02F544611E10912300268922 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		02F544631E109F3200268922 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +117,9 @@
 				02B96D0F1E0B0BDC00169F95 /* Assets.xcassets */,
 				02B96D111E0B0BDC00169F95 /* LaunchScreen.storyboard */,
 				02B96D141E0B0BDC00169F95 /* Info.plist */,
-				02F256741E0C3E7100563493 /* ItemListViewController.swift */,
-				02F2567C1E0C584600563493 /* ItemCell.swift */,
-				02F2567E1E0C59A300563493 /* ItemListDataProvider.swift */,
-				02F544441E0D96E200268922 /* DetailViewController.swift */,
-				02F544481E0DA26E00268922 /* InputViewController.swift */,
+				02F5445D1E108C5500268922 /* Controller */,
+				02F544611E10912300268922 /* APIClient.swift */,
+				02F544631E109F3200268922 /* Token.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -125,11 +129,8 @@
 			children = (
 				02B96D371E0B32B000169F95 /* ModelTests */,
 				02B96D1F1E0B0BDC00169F95 /* Info.plist */,
-				02F256721E0C3DC800563493 /* ItemListViewControllerTest.swift */,
-				02F256781E0C4EFB00563493 /* ItemListDataProviderTests.swift */,
-				02F256801E0C824900563493 /* ItemCellTests.swift */,
-				02F544421E0D962A00268922 /* DetailViewControllerTests.swift */,
-				02F544461E0DA21C00268922 /* InputViewControllerTests.swift */,
+				02F5445E1E108C6C00268922 /* Controller */,
+				02F5445F1E1090C400268922 /* APIClientsTests.swift */,
 			);
 			path = ToDoTests;
 			sourceTree = "<group>";
@@ -152,6 +153,30 @@
 				02B96D321E0B31FB00169F95 /* ItemManagerTests.swift */,
 			);
 			name = ModelTests;
+			sourceTree = "<group>";
+		};
+		02F5445D1E108C5500268922 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				02F256741E0C3E7100563493 /* ItemListViewController.swift */,
+				02F2567C1E0C584600563493 /* ItemCell.swift */,
+				02F2567E1E0C59A300563493 /* ItemListDataProvider.swift */,
+				02F544441E0D96E200268922 /* DetailViewController.swift */,
+				02F544481E0DA26E00268922 /* InputViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		02F5445E1E108C6C00268922 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				02F256721E0C3DC800563493 /* ItemListViewControllerTest.swift */,
+				02F256781E0C4EFB00563493 /* ItemListDataProviderTests.swift */,
+				02F256801E0C824900563493 /* ItemCellTests.swift */,
+				02F544421E0D962A00268922 /* DetailViewControllerTests.swift */,
+				02F544461E0DA21C00268922 /* InputViewControllerTests.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +287,11 @@
 				02F544491E0DA26E00268922 /* InputViewController.swift in Sources */,
 				02B96D351E0B329600169F95 /* ItemManager.swift in Sources */,
 				02F2567F1E0C59A300563493 /* ItemListDataProvider.swift in Sources */,
+				02F544621E10912300268922 /* APIClient.swift in Sources */,
 				02B96D091E0B0BDC00169F95 /* AppDelegate.swift in Sources */,
 				02B96D2F1E0B16B100169F95 /* Location.swift in Sources */,
 				02F2567D1E0C584600563493 /* ItemCell.swift in Sources */,
+				02F544641E109F3200268922 /* Token.swift in Sources */,
 				02B96D2B1E0B11C400169F95 /* ToDoItem.swift in Sources */,
 				02F256751E0C3E7100563493 /* ItemListViewController.swift in Sources */,
 				02F544451E0D96E200268922 /* DetailViewController.swift in Sources */,
@@ -279,6 +306,7 @@
 				02F256791E0C4EFB00563493 /* ItemListDataProviderTests.swift in Sources */,
 				02B96D331E0B31FB00169F95 /* ItemManagerTests.swift in Sources */,
 				02F544471E0DA21C00268922 /* InputViewControllerTests.swift in Sources */,
+				02F544601E1090C400268922 /* APIClientsTests.swift in Sources */,
 				02B96D291E0B0EB400169F95 /* ToDoItemTests.swift in Sources */,
 				02F544431E0D962A00268922 /* DetailViewControllerTests.swift in Sources */,
 				02F256731E0C3DC800563493 /* ItemListViewControllerTest.swift in Sources */,

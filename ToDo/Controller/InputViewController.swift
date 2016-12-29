@@ -41,9 +41,9 @@ class InputViewController: UIViewController {
         } else {
             date = nil
         }
+        let descriptionString = descriptionTextField.text
         
-        if let descriptionString = descriptionTextField.text, let locationName = locationTextField.text,
-            !descriptionString.isEmpty {
+        if let locationName = locationTextField.text {
             if let address = addressTextField.text,
                 !address.isEmpty {
                 
@@ -63,11 +63,19 @@ class InputViewController: UIViewController {
                             name: locationName,
                             coordinate: placeMark?.location?.coordinate))
                     
+                    DispatchQueue.main.async {
+                        self.itemManager?.add(item)
+                        self.dismiss(animated: true)
+                    }
                     
-                    self.itemManager?.add(item)
                 }
+            } else {
+                let item = ToDoItem(title: titleString, itemDescription: descriptionString, timestamp: date?.timeIntervalSince1970, location: nil)
+                self.itemManager?.add(item)
+                dismiss(animated: true)
             }
         }
+        
         
     }
     

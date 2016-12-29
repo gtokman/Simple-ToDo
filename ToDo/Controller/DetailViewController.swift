@@ -47,7 +47,7 @@ class DetailViewController: UIViewController {
         
     }
     
-    func checkItem() {
+    @IBAction func checkItem() {
         if let itemInfo = itemInfo {
             itemInfo.itemManager.checkItem(at: itemInfo.index)
         }
